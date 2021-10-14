@@ -4,7 +4,7 @@
  * @Author: Evildoer98
  * @Date: 2021-10-14 23:53:20
  * @LastEditors: Evildoer98
- * @LastEditTime: 2021-10-14 23:57:20
+ * @LastEditTime: 2021-10-15 00:01:20
  */
 
 
@@ -42,4 +42,24 @@
         }
     })
     return position
+};
+
+// 二分法
+/**
+ * @param {number[]} arr
+ * @return {number}
+ */
+ var peakIndexInMountainArray = function(arr) {
+    const length = arr.length
+    let left = 0, right = length - 1, ans = 0
+    while(left <= right) {
+        const mid = Math.floor((left + right) / 2)
+        if(arr[mid] > arr[mid+1]) {
+            ans = mid
+            right = mid - 1
+        } else {
+            left = mid + 1
+        }
+    }
+    return ans
 };
