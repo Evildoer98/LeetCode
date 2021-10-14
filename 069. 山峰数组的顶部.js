@@ -4,7 +4,7 @@
  * @Author: Evildoer98
  * @Date: 2021-10-14 23:53:20
  * @LastEditors: Evildoer98
- * @LastEditTime: 2021-10-14 23:53:20
+ * @LastEditTime: 2021-10-14 23:57:20
  */
 
 
@@ -18,3 +18,28 @@
  * 
  * 链接：https://leetcode-cn.com/problems/B1IidL
  */
+
+/**
+ * 
+ * 输入：arr = [0,10,5,2]
+ * 输出：1
+ * 
+ * 输入：arr = [24,69,100,99,79,78,67,36,26,19]
+ * 输出：2
+ */
+
+/**
+ * @param {number[]} arr
+ * @return {number}
+ */
+ var peakIndexInMountainArray = function(arr) {
+    let max = 0
+    let position = 0
+    arr.forEach((item, index) => {
+        if (item > max) {
+            max = item
+            position = index
+        }
+    })
+    return position
+};
