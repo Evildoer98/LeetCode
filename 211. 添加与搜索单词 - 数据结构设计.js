@@ -37,10 +37,7 @@
  * 
  */
 
-var WordDictionary = function() {
-    this.trieRoot = new TrieNode();
-};
-class TrieNode {
+ class TrieNode {
     constructor() {
         this.children = new Array(26).fill(0);
         this.isEnd = false;
@@ -67,6 +64,9 @@ class TrieNode {
         return this.isEnd;
     }
 }
+var WordDictionary = function() {
+    this.trieRoot = new TrieNode();
+};
 
 /** 
  * @param {string} word
